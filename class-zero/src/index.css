@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+  background-color: rgb(150, 78, 78);
+  color: rgb(77, 65, 65);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.one{
+  width: 100vw;
+  height: 100px;
+  background-color: bisque;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
