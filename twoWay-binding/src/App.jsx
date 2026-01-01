@@ -21,6 +21,11 @@ const App = () => {
     setnumber('')
     setimg('')
   }
+  function clickHandling(idx){
+    const canceller = [...allusers]
+    canceller.splice(idx,1)
+    setallusers(canceller)
+  }
 
   return (
     <div className='container'>
@@ -48,6 +53,7 @@ const App = () => {
           <h1>{elem.name}</h1>
           <h2>{elem.number}</h2>
           <h3>{elem.email}</h3>
+          <button onClick={()=>{clickHandling(idx)}}>remove</button>
         </div>
       })}
     </div>
