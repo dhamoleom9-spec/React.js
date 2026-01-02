@@ -7,7 +7,10 @@ const App = () => {
   const [number, setnumber] = useState('')
   const [img, setimg] = useState('')
 
-  const [allusers, setallusers] = useState([])
+  let getdata = JSON.parse(localStorage.getItem('all-users')) || []
+  console.log(getdata);
+  
+  const [allusers, setallusers] = useState(getdata)
 
   function submitHandler(e) {
     e.preventDefault()
@@ -16,15 +19,19 @@ const App = () => {
     oldUsers.push({ name, email, number, img })
     setallusers(oldUsers)
 
+    localStorage.setItem('all-users', JSON.stringify(oldUsers))
+
     setemail('')
     setname('')
     setnumber('')
     setimg('')
   }
-  function clickHandling(idx){
+
+  function clickHandling(idx) {
     const canceller = [...allusers]
-    canceller.splice(idx,1)
+    canceller.splice(idx, 1)
     setallusers(canceller)
+    localStorage.setItem('all-users', JSON.stringify(canceller))
   }
 
   return (
@@ -53,7 +60,7 @@ const App = () => {
           <h1>{elem.name}</h1>
           <h2>{elem.number}</h2>
           <h3>{elem.email}</h3>
-          <button onClick={()=>{clickHandling(idx)}}>remove</button>
+          <button onClick={() => { clickHandling(idx) }}>remove</button>
         </div>
       })}
     </div>
