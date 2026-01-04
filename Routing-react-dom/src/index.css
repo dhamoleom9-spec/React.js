@@ -114,7 +114,6 @@ h1 {
 
 .aan {
   text-decoration: none;
-  color: whitesmoke;
   font-size: 1.2rem;
   font-weight: 600;
   background-color: #333;
@@ -130,18 +129,41 @@ h1 {
   scale: 1.1;
 }
 
-.sale {
-  width: 100%;
+.co .box {
   position: absolute;
   top: 0;
-  display: flex;
-  gap: 2rem;
   background-color: red;
+  height: 9%;
+  width: 100%;
   margin-top: 1rem;
-  padding-inline: 12rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
 }
- .nes{
+
+.box::-webkit-scrollbar{
+  display: none;
+}
+
+.sale {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 2rem;
+  padding-left: 1rem;
+  animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+  from{translate: 0;}
+  to{translate: -100%;}
+}
+
+.nes {
   display: flex;
   flex-direction: column;
   gap: 3rem;
- }
+}
