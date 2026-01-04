@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Nav = () => {
     return (
@@ -11,9 +11,21 @@ const Nav = () => {
                 </h1>
             </div>
             <div className="box2">
-                <Link to='/about'>About</Link>
-                <Link to='/home'>Home</Link>
-                <Link to='/courses'>Corsses</Link>
+                <NavLink to='/about'
+                //     style={({ isAcive }) =>
+                //     ({color: isAcive ? 'red' : 'white'})
+                // }
+                >About</NavLink>
+                <NavLink to='/home'
+                //     style={({ isAcive }) =>
+                //     ({color: isAcive ? 'red' : 'white'})
+                // }
+                >Home</NavLink>
+                <NavLink to='/courses'
+                //     style={({ isAcive }) =>
+                //     ({color: isAcive ? 'red' : 'white'})
+                // }
+                >Corsses</NavLink>
             </div>
         </div>
     )

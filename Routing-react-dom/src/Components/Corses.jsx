@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Corses = () => {
   return (
@@ -33,7 +34,8 @@ const Corses = () => {
         </div>
       </div>
       <h1>loot lo mare ko <br /> ✊👈</h1>
-      <a className='aan' href="/courses/more">see more</a>
+
+      <NavLink className='aan' to='/courses/more'>See more</NavLink>
     </div>
   )
 }
